@@ -1,14 +1,16 @@
-export const FriendList = ({friends}) => {
+import { CssFriendsList } from "./friends_styled"
+
+export const FriendList = ({ friends }) => {
     return (
-        <ul className="friend-list">
+        <CssFriendsList>
             {friends.map(({ avatar, name, isOnline, id}) => (
-                <li className="item" key={id}>
-                    <span className="status" value={isOnline}></span>
-                    <img className="avatar" src={avatar} alt={name} width="48" />
-                    <p className="name">{name}</p>
+                <li key={id}>
+                    <span value={isOnline}></span>
+                    <img src={avatar} alt={name} width="48" />
+                    <p>{name}</p>
                 </li>
           ))}  
-        </ul>
+        </CssFriendsList>
     )
 }
 

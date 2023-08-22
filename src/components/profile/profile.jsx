@@ -1,34 +1,35 @@
+import { Container, ContInfo, ProfileName, Tumb} from "./profile_styled"
+
+
 export const ProfileUser = (props) => {
     const { like, views, follower, urlImg, location, tag, name, } = props
 
     return (
-        <div className="profile">
-            <h2>Profile</h2>
-            <div className="description">
+        <Container>
+            <ContInfo>
                 <img
                     src={urlImg}
                     alt= {name}
-                    className="avatar"
                 />
-                <p className="name">{name}</p>
-                <p className="tag">{tag}</p>
-                <p className="location">{location}</p>
-            </div>
+                <ProfileName>{name}</ProfileName>
+                <p>{tag}</p>
+                <p>{location}</p>
+            </ContInfo>
 
-            <ul className="stats">
+            <Tumb>
                 <li>
-                    <span className="label">Followers </span>
-                    <span className="quantity">{follower}</span>
+                    <span >Followers</span>
+                    <span>{follower}</span>
                 </li>
                 <li>
-                    <span className="label">Views </span>
-                    <span className="quantity">{views}</span>
+                    <span >Views</span>
+                    <span>{views}</span>
                 </li>
                 <li>
-                    <span className="label">Likes </span>
-                    <span className="quantity">{like}</span>
+                    <span>Likes</span>
+                    <span >{like}</span>
                 </li>
-            </ul>
-        </div>
+            </Tumb>
+        </Container>
     )
 }

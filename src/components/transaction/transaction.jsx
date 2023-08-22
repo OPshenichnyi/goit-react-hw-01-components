@@ -1,5 +1,8 @@
+import { CssTableTrans } from "./transaction_styled"
+
 export const TransactionHistory = ({ transactions }) => {
     return (
+        <CssTableTrans>
         <table className="transaction-history">
             <thead>
                 <tr>
@@ -18,6 +21,7 @@ export const TransactionHistory = ({ transactions }) => {
                     </tr>
                 ))}
             </tbody>
-        </table>
+            </table>
+        </CssTableTrans>
     )
 }
