@@ -1,5 +1,13 @@
 import styled from 'styled-components'
 
+const GetColorStatus = ({value}) => {
+    if (!value) {
+        return 'red'
+    }
+    return 'green'
+
+}
+
 export const CssFriendsList = styled.ul`
 display: block;
 margin: auto;
@@ -15,16 +23,7 @@ li{
     padding-bottom: 25px;
     border-radius: 8px; 
 }
-span{
-    display: block;
-    width: 25px;
-    height: 25px;
-    margin-right: 60px;
-    border: solid 1px red;
-    border-radius: 50%;
-    background-color: red; // Зробити за умовою 
-    margin-left: 60px;
-}
+
 img{
     width: 50px;
     height: 50px;
@@ -34,3 +33,13 @@ p{
     margin: 0;
 }
 `
+export const TegStatus = styled.span`
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-right: 60px;
+    border-radius: 50%;
+    background-color: ${GetColorStatus}; // Зробити за умовою
+    margin-left: 60px;
+`
+
